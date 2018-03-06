@@ -11,19 +11,14 @@ describe("Bubble Sort", function() {
     spyOn(window, "swap").and.callThrough();
   });
 
-  it("sorting the array to call swap one time", function() {
+  it("handles an empty array", function() {
+    expect(bubbleSort([])).toEqual([]);
+  });
+
+  it("calls swap 16 times", function() {
     bubbleSort(array);
     bubbleSort(array2);
     expect(window.swap.calls.count()).toEqual(16);
-  });
-
-  // it("sorting the array to call swap one time", function() {
-  //   bubbleSort(array2);
-  //   expect(window.swap.calls.count()).toEqual(16);
-  // });
-
-  it("handles an empty array", function() {
-    expect(bubbleSort([])).toEqual([]);
   });
 
   it("returns a correctly sorted array", function() {

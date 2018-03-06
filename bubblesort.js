@@ -9,10 +9,10 @@
 //   return array;
 // }
 
-function bubbleSort(array, callback = (a,b) => {if(a>b) return 1;}) {
+function bubbleSort(array, comparatorFunc = (a, b) => { if (a > b) return 1; }) {
   for (let i = 0; i < array.length; i++) {
     for (let j = 1; j < array.length - i; j++) {
-      if (callback(array[j - 1], array[j]) === 1) {
+      if (comparatorFunc(array[j - 1], array[j]) === 1) {
         swap(array, j);
       }
     }
